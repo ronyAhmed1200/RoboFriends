@@ -9,7 +9,7 @@ import ErrorBoundary from "./../Components/ErrorBoundary";
 class App extends React.Component {
   // to use state we have to use class, not fuction.
   constructor() {
-    super();
+    super();        // super() - to give constructor the using and access of this.state 
     this.state = {
       //using this because class is a object
       robots: [],
@@ -23,7 +23,7 @@ class App extends React.Component {
   //In practice, componentDidMount is the best place to put calls to fetch data, for two reasons: Using didMount makes it clear that data won't be loaded until after the initial render. This reminds you to set up initial state properly, so you don't end up with undefined state that causes errors.
 
   componentDidMount() {
-    //comPonentDidMount is using to fetch api
+    //comPonentDidMount is using here mainly to fetch api
     // this.setState({ robots: robots });
     // console.log("componentDidMount");
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -57,7 +57,7 @@ class App extends React.Component {
             <CardList robots={filteredRobots} />
           </ErrorBoundary>
         </Scroll>
-        {/* We have to use 'this', if it is a object. If it is a function there is no need for 'this'. */}
+        {/* We have to use 'this' keyword here, if it is an object. Otherwise If it is a function, then there is no need for 'this' keyword. */}
       </div>
     );
   }
